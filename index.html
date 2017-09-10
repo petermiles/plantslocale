@@ -6,9 +6,13 @@
     <title>Plants Locale</title>
   </head>
   <body ng-app="plantsApp">
-
       <div id="message" ng-controller="plantCtrl">
-        {{data}}
+        <input type="text" ng-model="state" name="" value="" placeholder="State">
+        <input type="text" ng-model="county" name="" value="" placeholder="County">
+        <button type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+        <pre ng-repeat="(key, item) in data">
+{{item | json}}
+        </pre>
       </div>
 
 

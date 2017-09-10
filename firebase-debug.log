@@ -1,0 +1,17 @@
+[debug] [2017-09-08T22:56:57.126Z] ----------------------------------------------------------------------
+[debug] [2017-09-08T22:56:57.129Z] Command:       /usr/local/bin/node /usr/local/bin/firebase database:push /{
+[debug] [2017-09-08T22:56:57.129Z] CLI Version:   3.10.0
+[debug] [2017-09-08T22:56:57.130Z] Platform:      darwin
+[debug] [2017-09-08T22:56:57.130Z] Node Version:  v6.11.3
+[debug] [2017-09-08T22:56:57.131Z] Time:          Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
+[debug] [2017-09-08T22:56:57.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-08T22:56:57.147Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2017-09-08T22:56:57.147Z] > authorizing via signed-in user
+[debug] [2017-09-08T22:56:57.151Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/plantslocale  
+ Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
+[debug] [2017-09-08T22:56:57.588Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-08T22:56:57.589Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/plantslocale/tokens  
+ Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
+[debug] [2017-09-08T22:56:57.995Z] <<< HTTP RESPONSE 200
+[info] Note: Reading STDIN. Type JSON data and then press Ctrl-D
