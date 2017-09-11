@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Plants Locale</title>
   </head>
   <body ng-app="plantsApp">
       <div id="message" ng-controller="plantCtrl">
-        <input type="text" ng-model="state" name="" value="" placeholder="State">
-        <input type="text" ng-model="county" name="" value="" placeholder="County">
+        <input type="text" ng-model="state" placeholder="State">
+        <input type="text" ng-model="county" placeholder="County">
         <button type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
         <pre ng-repeat="item in data">
           <h1>{{item.sciname}}</h1>
