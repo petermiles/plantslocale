@@ -10,8 +10,10 @@
         <input type="text" ng-model="state" name="" value="" placeholder="State">
         <input type="text" ng-model="county" name="" value="" placeholder="County">
         <button type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
-        <pre ng-repeat="(key, item) in data">
-{{item | json}}
+        <pre ng-repeat="item in data">
+          <h1>{{item.sciname}}</h1>
+          <h2>{{item.comname}}</h2>
+          <h3>{{item.county}}</h3>
         </pre>
       </div>
 
