@@ -3,6 +3,8 @@ angular
   .service("plantServ", function($firebaseObject, $firebaseArray) {
     var ref = firebase.database().ref();
     var obj = $firebaseObject(ref);
+
+    //Sorts Data by County Provided//
     this.sortData = function(state, county) {
       this.data = obj[state];
       this.data2 = [];

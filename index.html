@@ -3,19 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Plants Locale</title>
   </head>
-  <body ng-app="plantsApp">
+  <body class="container" ng-app="plantsApp">
       <div id="message" ng-controller="plantCtrl">
-        <input type="text" ng-model="state" placeholder="State">
-        <input type="text" ng-model="county" placeholder="County">
-        <button type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
-        <pre ng-repeat="item in data">
-          <h1>{{item.sciname}}</h1>
-          <h2>{{item.comname}}</h2>
-          <h3>{{item.county}}</h3>
-        </pre>
+        <div class="row">
+          <form class="col s12">
+              <div class="col s5 input-field">
+                <input type="text" ng-model="state" placeholder="State">
+              </div>
+                <div class="col s5 input-field">
+                  <input type="text" ng-model="county" placeholder="County">
+                </div>
+                  <div class="col s2 input-field">
+                    <button class="waves-effect waves-light btn" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+                  </div>
+          </form>
+      </div>
+      <div class="row">
+        <div class="listresults overflow-text col s6">
+            <ul class="collection hoverable" ng-click="pullData(item)" ng-repeat="item in data">
+                <li class="collection-item"><h5>{{item.sciname}}</h5></li>
+                <li class="collection-item">{{item.comname}}</li>
+                <li class="collection-item">{{item.county}}</li>
+            </ul>
+        </div>
+        <div class="col s6 overflow-text">
+            <div class="flickrImg">
+              <img class="response-img">
+            </div>
+            <div class="wikiData" ng-controller="wikiData">
+              {{wikiData[0]}}
+            </div>
+        </div>
+      </div>
       </div>
 
 
@@ -33,10 +56,17 @@
       firebase.initializeApp(config);
       </script>
   </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/plantCtrl.js"></script>
-    <script src="./js/plantServ.js"></script>
+    <script src="js/info/flickr/angular-flickr-api-factory.js"></script>
+    <script src="js/info/flickr/flickrCtrl.js"></script>
+    <script src="js/info/flickr/flickrServ.js"></script>
+    <script src="js/info/wikipedia/angular-wikipedia-api-factory.js"></script>
+    <script src="js/info/wikipedia/wikiCtrl.js"></script>
+    <script src="js/info/wikipedia/wikiServ.js"></script>
+    <script src="js/plantdata/plantCtrl.js"></script>
+    <script src="js/plantdata/plantServ.js"></script>
   </body>
 </html>
