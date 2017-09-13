@@ -8,38 +8,36 @@
     <title>Plants Locale</title>
   </head>
   <body class="container" ng-app="plantsApp">
-      <div id="message" ng-controller="plantCtrl">
-        <div class="row">
-          <form class="col s12">
-              <div class="col s5 input-field">
+  <div id="message" ng-controller="plantCtrl">
+    <div class="row">
+        <form class="col s12">
+            <div class="col s5 input-field">
                 <input type="text" ng-model="state" placeholder="State">
-              </div>
-                <div class="col s5 input-field">
-                  <input type="text" ng-model="county" placeholder="County">
-                </div>
-                  <div class="col s2 input-field">
-                    <button class="waves-effect waves-light btn" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
-                  </div>
-          </form>
-      </div>
-      <div class="row">
+            </div>
+            <div class="col s5 input-field">
+                <input type="text" ng-model="county" placeholder="County">
+            </div>
+            <div class="col s2 input-field">
+                <button class="waves-effect waves-light btn" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
         <div class="listresults overflow-text col s6">
             <ul class="collection hoverable" ng-click="pullData(item)" ng-repeat="item in data">
-                <li class="collection-item"><h5>{{item.sciname}}</h5></li>
+                <li class="collection-item">
+                    <h5>{{item.sciname}}</h5></li>
                 <li class="collection-item">{{item.comname}}</li>
                 <li class="collection-item">{{item.county}}</li>
             </ul>
         </div>
-        <div class="col s6 overflow-text">
-            <div class="flickrImg">
-              <img class="response-img">
-            </div>
-            <div class="wikiData" ng-controller="wikiData">
-              {{wikiData[0]}}
+        <div class="col s6">
+            <div>
+                {{wiki}}
             </div>
         </div>
-      </div>
-      </div>
+    </div>
+  </div>
 
 
 
