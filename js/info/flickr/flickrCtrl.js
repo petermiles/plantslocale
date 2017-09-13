@@ -1,17 +1,11 @@
 angular
   .module("plantsApp")
-  .controller("flickrCtrl", function($scope, flickrFactory) {
-    $scope.pullData = function(item) {
-      console.log("hello");
-      return flickrFactory
-        .getImagesByTags({
-          tags: item.sciname
-        })
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(_data) {
-          //on error
-        });
+  .controller("flickrCtrl", function($scope, flickrServ) {
+    $scope.flickrSrc = flickrServ.wikiResults;
+    console.log($scope.flickrSrc);
+    $scope.flickrData = function(item) {
+      flickrServ.pullData(item).then(function(response) {
+        $scope.flickr = response;
+      });
     };
   });

@@ -4,6 +4,4 @@ angular.module("plantsApp").controller("wikiCtrl", function($scope, wikiServ) {
       $scope.wiki = response;
     });
   };
-
-  $scope.test = "test";
 });
