@@ -1,10 +1,12 @@
 angular
   .module("plantsApp")
-  .controller("plantCtrl", function($scope, plantServ, wikiServ) {
+  .controller("plantCtrl", function($scope, plantServ, wikiServ, flickrServ) {
     $scope.data = plantServ.data;
     $scope.submitInput = plantServ.sortData;
-    $scope.wiki = wikiServ.results;
-    $scope.pullData = wikiServ.pullData;
-
-    $scope.test = "test";
+    $scope.pullData = flickrServ.pullData;
+    $scope.pullData = function(item) {
+      wikiServ.pullData(item).then(function(response) {
+        $scope.wiki = response;
+      });
+    };
   });
