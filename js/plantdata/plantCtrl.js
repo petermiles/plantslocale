@@ -13,6 +13,7 @@ angular
         $scope.data = response;
       });
     };
+
     $scope.flickrData = function(item) {
       flickrServ.pullData(item).then(function(response) {
         $scope.flickrSrc = response;
