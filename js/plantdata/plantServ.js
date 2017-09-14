@@ -1,22 +1,25 @@
 angular
   .module("plantsApp")
   .service("plantServ", function($firebaseObject, $firebaseArray) {
-    var ref = firebase.database().ref();
-    var obj = $firebaseObject(ref);
-
     //Sorts Data by County Provided//
+    var self = this;
     this.sortData = function(state, county) {
-      this.data = obj[state];
-      this.data2 = [];
-      if (county) {
-        for (var i = 0; i < this.data.length; i++) {
-          for (var j = 0; j < this.data[i].county.split(",").length; j++) {
-            if (this.data[i].county.split(",")[j] === county) {
-              this.data2.push(this.data[i]);
+      var ref = firebase
+        .database()
+        .ref()
+        .child(state);
+      var arr = $firebaseArray(ref);
+
+      return arr.$loaded().then(function(response) {
+        self.results = [];
+        if (county) {
+          for (var i = 0; i < response.length; i++) {
+            if (response[i].county.includes(county)) {
+              self.results.push(response[i]);
             }
           }
+          return self.results;
         }
-        this.data = this.data2;
-      }
+      });
     };
   });

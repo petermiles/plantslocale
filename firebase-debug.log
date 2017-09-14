@@ -1,30 +1,13 @@
-[debug] [2017-09-08T22:56:57.126Z] ----------------------------------------------------------------------
-[debug] [2017-09-08T22:56:57.129Z] Command:       /usr/local/bin/node /usr/local/bin/firebase database:push /{
-[debug] [2017-09-08T22:56:57.129Z] CLI Version:   3.10.0
-[debug] [2017-09-08T22:56:57.130Z] Platform:      darwin
-[debug] [2017-09-08T22:56:57.130Z] Node Version:  v6.11.3
-[debug] [2017-09-08T22:56:57.131Z] Time:          Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
-[debug] [2017-09-08T22:56:57.131Z] ----------------------------------------------------------------------
+[debug] [2017-09-14T03:17:46.775Z] ----------------------------------------------------------------------
+[debug] [2017-09-14T03:17:46.778Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2017-09-14T03:17:46.779Z] CLI Version:   3.10.1
+[debug] [2017-09-14T03:17:46.779Z] Platform:      darwin
+[debug] [2017-09-14T03:17:46.779Z] Node Version:  v6.11.3
+[debug] [2017-09-14T03:17:46.780Z] Time:          Wed Sep 13 2017 22:17:46 GMT-0500 (CDT)
+[debug] [2017-09-14T03:17:46.780Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-09-08T22:56:57.147Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] [2017-09-08T22:56:57.147Z] > authorizing via signed-in user
-[debug] [2017-09-08T22:56:57.151Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/plantslocale  
- Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
-[debug] [2017-09-08T22:56:57.588Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-08T22:56:57.589Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/plantslocale/tokens  
- Fri Sep 08 2017 17:56:57 GMT-0500 (CDT)
-[debug] [2017-09-08T22:56:57.995Z] <<< HTTP RESPONSE 200
-[info] Note: Reading STDIN. Type JSON data and then press Ctrl-D
-[debug] [2017-09-11T16:12:48.896Z] ----------------------------------------------------------------------
-[debug] [2017-09-11T16:12:48.899Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
-[debug] [2017-09-11T16:12:48.899Z] CLI Version:   3.10.1
-[debug] [2017-09-11T16:12:48.899Z] Platform:      darwin
-[debug] [2017-09-11T16:12:48.899Z] Node Version:  v6.11.3
-[debug] [2017-09-11T16:12:48.900Z] Time:          Mon Sep 11 2017 11:12:48 GMT-0500 (CDT)
-[debug] [2017-09-11T16:12:48.900Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-09-11T16:12:48.918Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] [2017-09-11T16:12:48.918Z] > authorizing via signed-in user
+[debug] [2017-09-14T03:17:46.797Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2017-09-14T03:17:46.798Z] > authorizing via signed-in user
 [info] 
      🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥     🔥🔥🔥     🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
      🔥🔥        🔥🔥  🔥🔥     🔥🔥 🔥🔥       🔥🔥     🔥🔥  🔥🔥   🔥🔥  🔥🔥       🔥🔥
@@ -36,6 +19,10 @@ You're about to initialize a Firebase project in this directory:
 
   /Users/peach/devmountain/personalProjects/plants
 
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
 [info] 
 === Project Setup
 [info] 
@@ -43,57 +30,18 @@ You're about to initialize a Firebase project in this directory:
 [info] You can create multiple project aliases by running firebase use --add, 
 [info] but for now we'll just set up a default project.
 [info] 
-[debug] [2017-09-11T16:13:21.689Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-09-11T16:13:21.690Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/HsuJJIf39gPkkLKtkjpBwjLi7EfPBPx7JrpW9xjVzlM',
+[debug] [2017-09-14T03:17:52.235Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-14T03:17:52.236Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/HsuJJIf39gPkkLKtkjpBwjLi7EfPBPx7JrpW9xjVzlM',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Mon Sep 11 2017 11:13:21 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:21.830Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:21.837Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
- Mon Sep 11 2017 11:13:21 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:22.392Z] <<< HTTP RESPONSE 200
+ Wed Sep 13 2017 22:17:52 GMT-0500 (CDT)
+[debug] [2017-09-14T03:17:52.381Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-14T03:17:52.404Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Wed Sep 13 2017 22:17:52 GMT-0500 (CDT)
+[debug] [2017-09-14T03:17:52.680Z] <<< HTTP RESPONSE 200
 [info] i  .firebaserc already has a default project, skipping
-[info] 
-=== Database Setup
-[info] 
-[info] Firebase Realtime Database Rules allow you to define how your data should be
-[info] structured and when your data can be read from and written to.
-[info] 
-[info] ✔  Database Rules for undefined have been downloaded to database.rules.json.
-[info] Future modifications to database.rules.json will update Database Rules when you run
-[info] firebase deploy.
-[info] 
-=== Functions Setup
-[info] 
-[info] A functions directory will be created in your project with a Node.js
-[info] package pre-configured. Functions can be deployed with firebase deploy.
-[info] 
-[debug] [2017-09-11T16:13:27.569Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-09-11T16:13:27.570Z] > authorizing via signed-in user
-[debug] [2017-09-11T16:13:27.570Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-09-11T16:13:27.570Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/HsuJJIf39gPkkLKtkjpBwjLi7EfPBPx7JrpW9xjVzlM',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Mon Sep 11 2017 11:13:27 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:27.690Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:27.699Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/plantslocale  
- Mon Sep 11 2017 11:13:27 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:27.975Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:27.977Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/plantslocale/tokens  
- Mon Sep 11 2017 11:13:27 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:28.471Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:28.473Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/plantslocale?updateMask=usageSettings { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
- Mon Sep 11 2017 11:13:28 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:28.474Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/plantslocale?updateMask=usageSettings { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
- Mon Sep 11 2017 11:13:28 GMT-0500 (CDT)
-[info] ✔  Wrote functions/package.json
-[info] ✔  Wrote functions/index.js
-[debug] [2017-09-11T16:13:29.470Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:30.622Z] <<< HTTP RESPONSE 200
 [info] 
 === Hosting Setup
 [info] 
@@ -101,10 +49,7 @@ You're about to initialize a Firebase project in this directory:
 [info] will contain Hosting assets to be uploaded with firebase deploy. If you
 [info] have a build process for your assets, use your build's output directory.
 [info] 
-[debug] [2017-09-11T16:13:55.394Z] >>> HTTP REQUEST GET https://www.gstatic.com/firebasejs/releases.json  
- Mon Sep 11 2017 11:13:55 GMT-0500 (CDT)
-[debug] [2017-09-11T16:13:55.473Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-11T16:13:55.561Z] Error: ENOTDIR: not a directory, open '/Users/peach/devmountain/personalProjects/plants/index.html/index.html'
+[debug] [2017-09-14T03:17:57.717Z] Error: ENOTDIR: not a directory, open '/Users/peach/devmountain/personalProjects/plants/index.html/404.html'
     at Error (native)
     at Object.fs.openSync (fs.js:642:18)
     at Object.fs.writeFileSync (fs.js:1348:33)
