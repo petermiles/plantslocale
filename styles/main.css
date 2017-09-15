@@ -2,6 +2,10 @@ body {
   height: 100vh;
 }
 
+.formstyle {
+  margin-top: 5vh;
+}
+
 .listresults {
   height: 70vh;
 }
@@ -12,7 +16,15 @@ body {
 }
 
 .searchforms {
-  margin: 5vh 20vh 0vh;
+  margin-top: 8vh;
+}
+
+.cardstyle {
+  margin-bottom: 1vh;
+}
+
+.listgroup:hover {
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 }
 
 .overflow-text {
@@ -23,12 +35,21 @@ body {
   background: transparent;
 }
 
+.main-logo {
+  max-width: 40vh;
+  max-height: 40vh;
+}
+
+.logoposi {
+  padding: 10vh 10vh 5vh 10vh;
+}
+
 .testbg {
   background-color: salmon;
 }
 
 .imgdimensions {
-  height: 30vh;
+  max-height: 30vh;
   width: 100%;
 }
 
