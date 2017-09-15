@@ -25,5 +25,12 @@ angular
         $scope.wiki = response;
       });
     };
+
     $scope.saveData = dataServ.saveData;
+
+    $scope.pullWatchlist = function(userId) {
+      dataServ.pullWatchlist(userId).then(function(response) {
+        $scope.watchList = response;
+      });
+    };
   });

@@ -1,11 +1,11 @@
 angular
   .module("plantsApp", ["ui.router", "firebase", "jtt_wikipedia", "jtt_flickr"])
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
 
     $stateProvider
       .state("home", {
-        url: "/",
+        url: "/home",
         templateUrl: "views/home.html"
       })
       .state("search", {
@@ -16,6 +16,11 @@ angular
       .state("login", {
         url: "/login",
         templateUrl: "views/login.html",
+        controller: "plantCtrl"
+      })
+      .state("watchlist", {
+        url: "/watchlist",
+        templateUrl: "views/watchlist.html",
         controller: "plantCtrl"
       });
   });

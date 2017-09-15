@@ -1,53 +1,41 @@
-  <div class="container">
-    <!-- <form>
-    <div class="col-sm-5 form-group row">
-      <input type="text" ng-model="state" placeholder="State">
-    </div>
-    <div class="col-sm-5">
-      <input type="text" ng-model="county" placeholder="County">
-    </div>
-    <div class="col-sm-2">
-      <button class="waves-effect waves-light btn" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
-    </div>
-  </form>
-  </div> -->
 
-  <form>
-  <div class="form-row searchforms">
-    <div class="col-7">
-      <input type="text" class="form-control" ng-model="state" placeholder="State">
+  <div class="md-form searchforms">
+    <div class="row">
+    <div class="col-5">
+      <input type="text" id="stateForm" class="form-control" ng-model="state">
+      <label for="stateForm" class="State">State</label>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" ng-model="county" placeholder="County">
+    <div class="col-5">
+      <input type="text" class="form-control" ng-model="county" id="countyForm">
+      <label for="countyForm">County</label>
     </div>
-    <div class="col">
+    <div class="col-2">
       <button class="btn btn-primary" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+
+      </div>
     </div>
   </div>
-</form>
+
 
 
   <div class="row">
-      <div class="listresults overflow-text col-sm-8">
-          <ul class="card cardstyle list-group" ng-click="pullData(item); flickrData(item)" ng-repeat="item in data" ng-model="data">
+      <div class="listresults overflow-text col-8">
+          <ul class="card cardstyle list-group hoverable" ng-click="pullData(item); flickrData(item)" ng-repeat="item in data" ng-model="data">
               <li class="list-group-item">
                   <h5>{{item.sciname}}</h5></li>
               <li class="list-group-item">{{item.comname}}</li>
               <li class="list-group-item">{{item.county}}</li>
           </ul>
       </div>
-      <div class="col-sm-4 info-card-height">
-        <div class="card">
-          <div class="card-img-top">
-            <img ng-src="{{flickrSrc}}" class="imgdimensions">
-          </div>
+      <div class="col-4">
+        <div class="card info-card-height hoverable">
+            <img ng-src="{{flickrSrc}}" class="img-fluid">
           <div class="card-body">
             <h5 class="card-title">{{item.comname}}</h5>
             <p class="card-text text-truncate">{{wiki[0]}}</p>
-            <button type="button" class="btn btn-raised btn-primary">View More Info</button>
+
+              <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
           </div>
-            <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
+        </div>
       </div>
     </div>
-
-  </div>

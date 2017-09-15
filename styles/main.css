@@ -23,10 +23,6 @@ body {
   margin-bottom: 1vh;
 }
 
-.listgroup:hover {
-  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
-}
-
 .overflow-text {
   overflow: scroll;
 }
@@ -44,10 +40,6 @@ body {
   padding: 10vh 10vh 5vh 10vh;
 }
 
-.testbg {
-  background-color: salmon;
-}
-
 .imgdimensions {
   max-height: 30vh;
   width: 100%;
@@ -55,8 +47,4 @@ body {
 
 .info-card-height {
   max-height: 50vh;
-}
-
-.max-height {
-  height: 100vh;
 }
