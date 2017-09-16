@@ -1,3 +1,5 @@
+<div class="container">
+
 
 <button type="button" class="btn btn-outline-primary waves-effect" ng-click="pullWatchlist()">Pull Watchlist</button>
 
@@ -5,5 +7,20 @@
 
 
 <div class="row">
-      <div ng-repeat="(key, watchlist) in watchList">{{watchlist.$id}}</div>
+      <div ng-repeat="(key, watchlist) in watchList">
+        <button type="button" class="btn btn-primary" ng-click="showCard(watchlist)" ng-model="checked" ng-init="checked=watchlist.$id">{{watchlist.$id}}</button>
+      </div>
+</div>
+
+
+<div class="row">
+  <div class="listresults overflow-text card hoverable">
+    <ul ng-repeat="obj in selected" class="card-content">
+      <li class="list-group-item">{{obj.sciname}}</li>
+      <li class="list-group-item">{{obj.comname}}</li>
+      <li class="list-group-item">{{obj.county}}</li>
+    </ul>
+  </div>
+</div>
+
 </div>

@@ -33,4 +33,15 @@ angular
         $scope.watchList = response;
       });
     };
+
+    // $scope.showCard = dataServ.showCard;
+    $scope.showCard = function(card) {
+      console.log(card);
+      $scope.selected = card;
+    };
+    // function(id) {
+    //   dataServ.pullWatchlist(id).then(function(response) {
+    //     $scope.watchList = response;
+    //   });
+    // };
   });

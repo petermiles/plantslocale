@@ -1,41 +1,43 @@
-
-  <div class="md-form searchforms">
+<div class="md-form searchforms">
     <div class="row">
-    <div class="col-5">
-      <input type="text" id="stateForm" class="form-control" ng-model="state">
-      <label for="stateForm" class="State">State</label>
-    </div>
-    <div class="col-5">
-      <input type="text" class="form-control" ng-model="county" id="countyForm">
-      <label for="countyForm">County</label>
-    </div>
-    <div class="col-2">
-      <button class="btn btn-primary" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
-
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="row">
-      <div class="listresults overflow-text col-8">
-          <ul class="card cardstyle list-group hoverable" ng-click="pullData(item); flickrData(item)" ng-repeat="item in data" ng-model="data">
-              <li class="list-group-item">
-                  <h5>{{item.sciname}}</h5></li>
-              <li class="list-group-item">{{item.comname}}</li>
-              <li class="list-group-item">{{item.county}}</li>
-          </ul>
-      </div>
-      <div class="col-4">
-        <div class="card info-card-height hoverable">
-            <img ng-src="{{flickrSrc}}" class="img-fluid">
-          <div class="card-body">
-            <h5 class="card-title">{{item.comname}}</h5>
-            <p class="card-text text-truncate">{{wiki[0]}}</p>
-
-              <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
-          </div>
+        <div class="col-5">
+            <input type="text" id="stateForm" class="form-control" ng-model="state">
+            <label for="stateForm" class="State">State</label>
         </div>
-      </div>
+        <div class="col-5">
+            <input type="text" class="form-control" ng-model="county" id="countyForm">
+            <label for="countyForm">County</label>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+
+        </div>
     </div>
+</div>
+
+<div class="row">
+    <div class="listresults overflow-text col-8">
+        <ul class="card cardstyle list-group hoverable" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data"  ng-model="infoCard" ng-init="infoCard=true">
+            <li class="list-group-item">
+                <h5>{{item.sciname}}</h5></li>
+            <li class="list-group-item">{{item.comname}}</li>
+            <li class="list-group-item">{{item.county}}</li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <div ng-init="infoCardOpen = false" ng-show="infoCard">
+            <div class="card info-card-height hoverable" id="infoCard">
+                <img ng-src="{{flickrSrc}}" class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.comname}}</h5>
+                    <p class="card-text text-truncate">{{wiki[0]}}</p>
+
+                    <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
+                </div>
+            </div>
+
+        <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
+
+        </div>
+    </div>
+</div>
