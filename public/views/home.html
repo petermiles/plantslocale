@@ -17,10 +17,24 @@
 
 
 <div class="row">
+  <!-- <div class="col-6 text-center learnmore">
+    <a ui-sref="search">
+    <button class="btn btn-large green" type="button" name="button">Get to Searching</button>
+  </a>
+  </div> -->
   <div class="col-12 text-center learnmore">
-    <h3>Learn More</h3>
-    <div class="text-center">
-      <img src="https://firebasestorage.googleapis.com/v0/b/plantslocale.appspot.com/o/ic_expand_more_black_24px.svg?alt=media&token=5f809194-dce1-44f7-a9d6-5e67ac0b213f" alt="">
-    </div>
+    <button class="btn btn-large green" type="button" name="button" data-toggle="modal" data-target="#loginModal" >Login to Save Your Watchlists</button>
   </div>
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <!--Content-->
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div id="firebaseui-auth-container" id="loginTemplate"></div>
+              </div>
+          </div>
+      </div>
+  </div
 </div>

@@ -25,4 +25,8 @@ angular
         return watchList;
       });
     };
+
+    this.removeFromData = function() {
+      console.log("Try To Fix This Tomorrow");
+    };
   });

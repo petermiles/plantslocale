@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="listresults overflow-text col-8">
-        <ul class="card cardstyle list-group hoverable smoothscroll" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data" ng-model="infoCard" ng-init="infoCard=true">
+        <ul class="card cardstyle list-group hoverable smoothscroll" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data">
             <li class="list-group-item">
                 <h5>{{item.sciname}}</h5></li>
             <li class="list-group-item">{{item.comname}}</li>
@@ -25,8 +25,7 @@
         </ul>
     </div>
     <div class="col-4">
-        <div>
-            <div class="card info-card-height displayNone hoverable" id="infoCard">
+            <div class="card info-card-height displayNone hoverable" ng-show='show'>
                 <img ng-src="{{flickrSrc}}" class="img-fluid">
                 <div class="card-body">
                     <h5 class="card-title">{{item.comname}}</h5>
@@ -34,10 +33,7 @@
 
                     <button type="button" name="button" class="btn btn-raised green" data-toggle="modal" data-target="#moreInfoModal">View More Info</button>
                 </div>
-            </div>
-
-            <div class="btn green" ng-click="saveData(data)" data-toggle="modal" data-target="#addToWatchlist">Add to Watchlist</button>
-
+                <div class="btn green" ng-click="saveData(data)" data-toggle="modal" data-target="#addToWatchlist">Add to Watchlist</button>
             </div>
         </div>
     </div>
@@ -70,7 +66,7 @@
                 <!--Footer-->
                 <div class="modal-footer">
                     <button type="button" class="btn red" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success green" id="addedButton">Add To Watchlist</button>
+                    <button type="button" class="btn btn-success" id="addedButton">Add To Watchlist</button>
                 </div>
             </div>
             <!--/.Content-->

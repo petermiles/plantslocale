@@ -16,12 +16,18 @@ angular
     $scope.flickrData = function(item) {
       flickrServ.pullData(item).then(function(response) {
         $scope.flickrSrc = response;
+        $scope.show = true;
       });
     };
     $scope.flickrSrc = flickrServ.wikiResults;
 
+    $scope.pendingData = function() {
+      $scope.dataLoaded = true;
+      console.log("hello");
+    };
     $scope.pullData = function(item) {
       wikiServ.pullData(item).then(function(response) {
+        $scope.dataLoaded = true;
         $scope.wiki = response;
       });
     };
@@ -33,8 +39,12 @@ angular
         $scope.watchList = response;
       });
     };
-
+    $scope.show = false;
     $scope.showCard = function(card) {
       $scope.selected = card;
     };
+
+    $("#loadingIcon").on;
+
+    $scope.removeFromData = dataServ.removeFromData;
   });
