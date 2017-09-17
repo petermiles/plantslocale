@@ -1,9 +1,39 @@
 body {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.moreInfoText {
+  font-size: 1em;
+}
+
+.modal-full-height {
+  max-width: 80vh;
+}
+
+input[type="text"]:focus:not([readonly]) + label {
+  color: #4caf50;
+}
+
+input[type="text"]:focus:not([readonly]) {
+  border-bottom: 1.1px solid #4caf50;
+  box-shadow: 0 1px 0 0 #4caf50;
+}
+
+.maxHeightModal {
+  max-height: 25vh;
 }
 
 .formstyle {
   margin-top: 5vh;
+}
+
+.w80 {
+  margin: 0 10vh;
+}
+
+.img-height {
+  height: 100%;
 }
 
 .listresults {

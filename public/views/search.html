@@ -9,7 +9,7 @@
             <label for="countyForm">County</label>
         </div>
         <div class="col-2">
-            <button class="btn btn-primary" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+            <button class="btn green" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
 
         </div>
     </div>
@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="listresults overflow-text col-8">
-        <ul class="card cardstyle list-group hoverable" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data"  ng-model="infoCard" ng-init="infoCard=true">
+        <ul class="card cardstyle list-group hoverable smoothscroll" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data" ng-model="infoCard" ng-init="infoCard=true">
             <li class="list-group-item">
                 <h5>{{item.sciname}}</h5></li>
             <li class="list-group-item">{{item.comname}}</li>
@@ -25,19 +25,78 @@
         </ul>
     </div>
     <div class="col-4">
-        <div ng-init="infoCardOpen = false" ng-show="infoCard">
-            <div class="card info-card-height hoverable" id="infoCard">
+        <div>
+            <div class="card info-card-height displayNone hoverable" id="infoCard">
                 <img ng-src="{{flickrSrc}}" class="img-fluid">
                 <div class="card-body">
                     <h5 class="card-title">{{item.comname}}</h5>
                     <p class="card-text text-truncate">{{wiki[0]}}</p>
 
-                    <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
+                    <button type="button" name="button" class="btn btn-raised green" data-toggle="modal" data-target="#moreInfoModal">View More Info</button>
                 </div>
             </div>
 
-        <button type="button" name="button" class="btn btn-raised btn-primary" ng-click="saveData(data)">Add to Watchlist</button>
+            <div class="btn green" ng-click="saveData(data)" data-toggle="modal" data-target="#addToWatchlist">Add to Watchlist</button>
 
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- View More Info Modal -->
+    <div class="modal fade" id="moreInfoModal" tabindex="-1" role="dialog" aria-labelledby="moreInfoModal" aria-hidden="true">
+        <div class="modal-dialog modal-full-height modal-bottom" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="moreInfoModal">{{item.comname}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body maxHeightModal">
+                  <div class="row">
+                    <div class="col-4 mx-auto">
+                      <div class="text-center">
+                      <img ng-src="{{flickrSrc}}" class="img-height">
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <p class="overflow-text">{{wiki[0]}}</p>
+                    </div>
+                </div>
+              </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn red" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success green" id="addedButton">Add To Watchlist</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <!-- Added To Wachlist Modal -->
+    <div class="modal fade right" id="addToWatchlist" tabindex="-1" role="dialog" aria-labelledby="addToWatchlist" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-header green">
+                    <p class="heading lead">Added To Watchlist</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h4>Succesfully added to your watchlist!</h4>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn green" ui-sref="watchlist">View My Watchlists</button>
+                </div>
+            </div>
+        </div>
+    </div>
