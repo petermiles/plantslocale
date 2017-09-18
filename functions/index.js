@@ -8,7 +8,8 @@ exports.createUserAccount = functions.auth.user().onCreate(event => {
   const uid = event.data.uid;
   const email = event.data.email;
   const photoUrl =
-    event.data.photoUrl || "http://via.placeholder.com/350x150.jpg";
+    event.data.photoUrl ||
+    "http://www.gardensbythebay.com.sg/etc/designs/gbb/clientlibs/images/common/not_found.jpg";
 
   const newUserRef = ref.child(`/users/${uid}`);
   return newUserRef.set({

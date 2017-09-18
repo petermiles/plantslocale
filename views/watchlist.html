@@ -6,16 +6,18 @@
     </div>
   </div>
   <div class="row">
-        <div ng-repeat="(key, watchlist) in watchList" class="col-lg-3">
-          <button type="button" class="btn green" ng-click="showCard(watchlist)" ng-hide="loading">{{watchlist.$id}}</button>
-        </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="text-center" ng-show="loading">
-          <i class="fa fa-spinner fa-spin"></i>
+    <div class="col-12">
+        <div ng-repeat="(key, watchlist) in watchList">
+          <button type="button" class=" green" ng-click="showCard(watchlist)" ng-hide="loading">{{watchlist.$id}}</button>
         </div>
       </div>
-    </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="text-center" ng-show="loading">
+              <i class="fa fa-spinner fa-spin"></i>
+            </div>
+          </div>
+        </div>
   </div>
 
   <div class="row watchlistPadding">
