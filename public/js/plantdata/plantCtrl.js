@@ -23,18 +23,12 @@ angular
     $scope.flickrSrc = flickrServ.wikiResults;
 
     $scope.loading = false;
-    $scope.loadingWL = false;
     $scope.showIcon = function() {
       $scope.loading = true;
     };
 
-    // $scope.showWLIcon = function() {
-    //   $scope.loadingWL = true;
-    // };
-
     $scope.pullData = function(item) {
       wikiServ.pullData(item).then(function(response) {
-        $scope.loading = false;
         $scope.wiki = response;
       });
     };
@@ -42,37 +36,13 @@ angular
     $scope.saveData = dataServ.saveData;
 
     $scope.pullWatchlist = function(userId) {
-      $scope.loadingWL = true;
       dataServ.pullWatchlist(userId).then(function(response) {
         $scope.watchList = response;
-        $scope.loadingWL = false;
       });
     };
     $scope.show = false;
     $scope.showCard = function(card) {
-      $scope.show2 = true;
-      $scope.value = 10;
-      $scope.noob = function() {
-        $scope.count = $scope.value;
-        $scope.value += 10;
-        if ($scope.value - 10 <= card.length) {
-          $scope.value += 10;
-        } else {
-          $scope.value = card.length;
-          $scope.count = card.length - 10;
-        }
-
-        $scope.selected = [];
-        for (let i = $scope.count; i < $scope.value; i++) {
-          $scope.selected.push(card[i]);
-        }
-      };
-      $scope.selected = [];
-      for (let i = 0; i < $scope.value; i++) {
-        $scope.selected.push(card[i]);
-      }
-
-      $scope.loadingWL = false;
+      $scope.selected = card;
     };
 
     $scope.removeFromData = dataServ.removeFromData;
