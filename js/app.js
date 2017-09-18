@@ -1,11 +1,5 @@
 angular
-  .module("plantsApp", [
-    "ui.router",
-    "firebase",
-    "jtt_wikipedia",
-    "jtt_flickr",
-    "ngAnimate"
-  ])
+  .module("plantsApp", ["ui.router", "firebase", "jtt_wikipedia", "jtt_flickr"])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
 
