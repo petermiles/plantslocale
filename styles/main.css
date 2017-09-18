@@ -1,9 +1,54 @@
 body {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/plantslocale.appspot.com/o/pexels-photo-129105-compressor.jpeg?alt=media&token=6a582f52-9aa1-44cb-bfe7-db8bdfb9b5f0");
+}
+
+.moreInfoText {
+  font-size: 1em;
+}
+
+.modal-full-height {
+  max-width: 80vh;
+}
+
+
+input[type="text"]:focus:not([readonly]) {
+  border-bottom: 1.1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+input {
+  border-bottom 1.1px solid white;
+  color: white !important;
+}
+
+label {
+color: white !important;
+}
+
+.md-form label {
+  left : auto !important;
+}
+
+.maxHeightModal {
+  max-height: 25vh;
+}
+
+.watchlistPadding {
+  margin-top: 5vh;
 }
 
 .formstyle {
   margin-top: 5vh;
+}
+
+.w80 {
+  margin: 0 10vh;
+}
+
+.img-height {
+  height: 100%;
 }
 
 .listresults {
@@ -21,19 +66,90 @@ body {
 
 .cardstyle {
   margin-bottom: 1vh;
+  opacity: .85
+}
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite,
+    colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.learnmore {
+  margin-top: 13vh;
+}
+
+.watchlistcard {
+  margin-top: 20vh;
 }
 
 .overflow-text {
   overflow: scroll;
 }
+
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
   background: transparent;
 }
+
+.zindex10 {
+  z-index: 100
+}
+
 
 .main-logo {
   max-width: 40vh;
   max-height: 40vh;
+}
+
+.w100 {
+  width: 100% !important
 }
 
 .logoposi {
@@ -47,4 +163,5 @@ body {
 
 .info-card-height {
   max-height: 50vh;
+  opacity: .9
 }

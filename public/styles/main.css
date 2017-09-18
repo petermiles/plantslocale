@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/plantslocale.appspot.com/o/pexels-photo-129105-compressor.jpeg?alt=media&token=6a582f52-9aa1-44cb-bfe7-db8bdfb9b5f0");
 }
 
 .moreInfoText {
@@ -11,17 +12,31 @@ body {
   max-width: 80vh;
 }
 
-input[type="text"]:focus:not([readonly]) + label {
-  color: #4caf50;
-}
 
 input[type="text"]:focus:not([readonly]) {
-  border-bottom: 1.1px solid #4caf50;
-  box-shadow: 0 1px 0 0 #4caf50;
+  border-bottom: 1.1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+input {
+  border-bottom 1.1px solid white;
+  color: white !important;
+}
+
+label {
+color: white !important;
+}
+
+.md-form label {
+  left : auto !important;
 }
 
 .maxHeightModal {
   max-height: 25vh;
+}
+
+.watchlistPadding {
+  margin-top: 5vh;
 }
 
 .formstyle {
@@ -51,6 +66,12 @@ input[type="text"]:focus:not([readonly]) {
 
 .cardstyle {
   margin-bottom: 1vh;
+  opacity: .85
+}
+
+.loadersize {
+  font-size: 30vh;
+  color: #4caf50;
 }
 
 a {
@@ -64,75 +85,6 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: black;
-}
-
-.loader {
-  position: relative;
-  margin: 0 auto;
-  width: $width;
-  &:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-}
-
-.circular {
-  animation: rotate 2s linear infinite;
-  height: 100%;
-  transform-origin: center center;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.path {
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-  stroke-linecap: round;
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes dash {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
-  }
-  100% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
-  }
-}
-
-@keyframes color {
-  100%,
-  0% {
-    stroke: red;
-  }
-  40% {
-    stroke: blue;
-  }
-  66% {
-    stroke: green;
-  }
-  80%,
-  90% {
-    stroke: yellow;
-  }
 }
 
 .learnmore {
@@ -152,9 +104,18 @@ a:hover {
   background: transparent;
 }
 
+.zindex10 {
+  z-index: 100
+}
+
+
 .main-logo {
   max-width: 40vh;
   max-height: 40vh;
+}
+
+.w100 {
+  width: 100% !important
 }
 
 .logoposi {
@@ -168,4 +129,5 @@ a:hover {
 
 .info-card-height {
   max-height: 50vh;
+  opacity: .9
 }

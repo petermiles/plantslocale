@@ -1,42 +1,46 @@
 <div class="md-form searchforms">
     <div class="row">
-        <div class="col-5">
+        <div class="col-lg-5 col-md-5 col-xs-6 md-form">
             <input type="text" id="stateForm" class="form-control" ng-model="state">
-            <label for="stateForm" class="State">State</label>
+            <label for="stateForm" class="">State</label>
         </div>
-        <div class="col-5">
+        <div class="col-lg-5 col-md-5 col-xs-6">
             <input type="text" class="form-control" ng-model="county" id="countyForm">
-            <label for="countyForm">County</label>
+            <label for="countyForm" class="">County</label>
         </div>
-        <div class="col-2">
-            <button class="btn green" type="button" ng-click="submitInput(state, county)" name="button">Submit</button>
+        <div class="col-lg-2  col-md-2 col-xs-12">
+            <button class="btn green" type="button" ng-click="submitInput(state, county); showIcon(true)" name="button">Submit</button>
 
+        </div>
+        <div class="col-lg-12">
+          <div class="text-center" ng-show="loading">
+            <i class="fa fa-spinner fa-spin loadersize "></i>
+          </div>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="listresults overflow-text col-8">
+    <div class="listresults overflow-text col-lg-8 col-sm-6 col-xs-12">
         <ul class="card cardstyle list-group hoverable smoothscroll" ng-click="pullData(item); flickrData(item);" ng-repeat="item in data">
-            <li class="list-group-item">
-                <h5>{{item.sciname}}</h5></li>
-            <li class="list-group-item">{{item.comname}}</li>
-            <li class="list-group-item">{{item.county}}</li>
+            <a data-scroll><li class="list-group-item">
+                <h5>{{item.sciname}}</h5></li></a>
+            <a data-scroll><li class="list-group-item">{{item.comname}}</li></a>
+            <a data-scroll><li class="list-group-item">{{item.county}}</li></a>
         </ul>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-6 col-xs-12">
             <div class="card info-card-height displayNone hoverable" ng-show='show'>
                 <img ng-src="{{flickrSrc}}" class="img-fluid">
                 <div class="card-body">
                     <h5 class="card-title">{{item.comname}}</h5>
                     <p class="card-text text-truncate">{{wiki[0]}}</p>
-
-                    <button type="button" name="button" class="btn btn-raised green" data-toggle="modal" data-target="#moreInfoModal">View More Info</button>
+                <button class="btn w100 hoverable green" data-toggle="modal" data-target="#moreInfoModal" ng-show="show">View More Info</button>
                 </div>
-                <div class="btn green" ng-click="saveData(data)" data-toggle="modal" data-target="#addToWatchlist">Add to Watchlist</button>
             </div>
-        </div>
+                <button class="btn w100 hoverable green" ng-click="saveData(data)" data-toggle="modal" data-target="#addToWatchlist" ng-show="show">Add to Watchlist</button>
     </div>
+</div>
 
     <!-- View More Info Modal -->
     <div class="modal fade" id="moreInfoModal" tabindex="-1" role="dialog" aria-labelledby="moreInfoModal" aria-hidden="true">
@@ -66,7 +70,6 @@
                 <!--Footer-->
                 <div class="modal-footer">
                     <button type="button" class="btn red" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" id="addedButton">Add To Watchlist</button>
                 </div>
             </div>
             <!--/.Content-->

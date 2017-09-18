@@ -14,6 +14,6 @@ exports.createUserAccount = functions.auth.user().onCreate(event => {
   return newUserRef.set({
     photoUrl: photoUrl,
     email: email,
-    watchlist: []
+    watchlist: [{}]
   });
 });
